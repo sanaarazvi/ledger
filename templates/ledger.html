@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ledger</title>
+</head>
+<body>
+    <h1>Blockchain Ledger</h1>
+    {% for block in chain %}
+        <h2>Block {{block.index}}</h2>
+        <p>Timestamp: {{block.timestamp}}</p>
+        <p>Previous Hash: {{block.previous_hash}}</p>
+        <p>Hash: {{block.hash}}</p>
+        <p>Transactions:</p>
+        <ul>
+        {% for t in block.transactions %}
+            <li>{{t.sender}} → {{t.receiver}} : {{t.amount}}</li>
+        {% endfor %}
+        </ul>
+        <hr>
+    {% endfor %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banking System</title>
+</head>
+<body>
+    <h1>Send Money</h1>
+    <form method="POST" action="/">
+        Name: <input type="text" name="name" required><br>
+        Account Number: <input type="text" name="account_number" required><br>
+        Amount: <input type="number" name="amount" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if account_number %}
+    <h2>Your Account Number:</h2>
+    <input type="text" value="{{ account_number }}" readonly><br>
+    {% endif %}
+
+    <br>
+    <a href="/mine">Mine Transactions</a> | <a href="/ledger">View Ledger</a>
+</body>
+</html>
